@@ -1,6 +1,17 @@
+import {Task} from '../interfaces/Task';
 
-export default function TaskList() {
+interface Props {
+    tasks: Task[]
+}
+
+export default function TaskList({tasks}:Props) {
   return (
-    <div>TaskList</div>
-  )
+    <>
+    {tasks.map((task) => (
+        <div>
+            <h2>{task.title}</h2>
+        </div>
+    ))}
+    </>
+  );
 }

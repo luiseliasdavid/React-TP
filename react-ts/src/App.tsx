@@ -1,35 +1,39 @@
+
 import { useState } from 'react';
 import './App.css';
+import logo from './logo.svg';
+import {Task} from './interfaces/Task';
+import TaskList from './components/TaskList';
 
 interface Props {
   title: string
 }
-interface Task {
-  id: number,
-  title: string,
-  description:'Learn React',
-  completed: false
-}
 
-function App({title}:Props) {
+
+export function App({title}:Props) {
 
   const [task, setTask] = useState<Task[]>([{
     id: 1,
     title: 'Learn React',
     description: 'Learn React',
-    completed: false
+    completed: false,
   }]);
 
   return (
-    <div className="App">
-     <h1>{title}</h1>
-     {
-      task.map(task => (
-        <div key={task.id}>
-          <h2>{task.title}</h2>
-          </div>
-      ))
-     }
+    <div className="bg-dark text-white" style={{height: '100vh'}}>
+      {/* navbar */}
+      <nav className="navbar navbar-dark bg-primary">
+        <a href="/" className='navbar-brand'>
+          <img src={logo} alt="logo" style={{width:"4rem"}}/>
+          {title}
+          </a>
+        </nav>
+        {/* end navbar */}
+     <main className="container p-4">
+    <TaskList tasks={task} />
+
+     </main>
+
 
 
     </div>
