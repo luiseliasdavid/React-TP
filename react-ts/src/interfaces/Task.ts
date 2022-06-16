@@ -1,7 +1,7 @@
 
 export interface Task {
-    id: number,
-    title: string,
-    description:'Learn React',
-    completed: false
-  }
+  id?: number;
+  title: string;
+  description: string;
+  completed?: boolean;
+}

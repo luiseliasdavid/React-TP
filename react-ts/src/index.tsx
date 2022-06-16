@@ -1,19 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom";
+import 'bootswatch/dist/yeti/bootstrap.css'
+import "./index.css";
+import  {App}  from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import "bootswatch/dist/yeti/bootstrap.min.css";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App title="application" />
-  </React.StrictMode>
- 
+    <App title="React Typescript" />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
